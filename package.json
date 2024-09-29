@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "This is a discussion forum for tech people to disucss and ask questions",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "start": "node -r dotenv/config --experimental-json-modules src/index.js",
+    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
   },
   "author": "Piyush Patel",
   "license": "ISC",
