@@ -14,7 +14,7 @@ router.route("/:postId").post(createComment).get(getComments);
 router
   .route("/:postId/:commentId")
   .get(getComment)
-  .put(updateComment)
+  .patch(updateComment)
   .delete(deleteComment)
   .post(createComment);
 
