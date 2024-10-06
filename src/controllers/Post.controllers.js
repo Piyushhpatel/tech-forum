@@ -92,8 +92,8 @@ const getPosts = AsyncHandler(async (req, res) => {
         throw new ApiError(404, "Posts not found");
     }
 
-    post.nextPage = post.nextPage ? `${req.protocol}://${req.get("host")}/api/v1/posts?page=${post.nextPage}&limit=${limit}` : null;
-    post.prevPage = post.prevPage ? `${req.protocol}://${req.get("host")}/api/v1/posts?page=${post.prevPage}&limit=${limit}` : null;
+    post.nextPage = post.nextPage ? `/posts?page=${post.nextPage}&limit=${limit}` : null;
+    post.prevPage = post.prevPage ? `/posts?page=${post.prevPage}&limit=${limit}` : null;
 
     res.status(200).json(new ApiResponse(200, post, "Posts fetched successfully"));
 });
